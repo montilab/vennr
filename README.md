@@ -14,6 +14,10 @@ Install the development version of the package from Github.
 devtools::install_github("montilab/vennr")
 ```
 
+``` r
+library(vennr)
+```
+
 ## Examples
 
 ``` r
@@ -24,7 +28,7 @@ sets <- list("Set A" = LETTERS[1:10],
 vennr(sets)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
 sets <- list(list("sets"=list('Tigers'), "size"=12),
@@ -35,7 +39,7 @@ sets <- list(list("sets"=list('Tigers'), "size"=12),
 vennr(sets, raw=TRUE)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 ``` r
 str(head(genesets))
@@ -53,10 +57,10 @@ str(head(genesets))
 vennr(genesets[30:35])
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
 
 ``` r
 vennr(genesets[25:35], labels=FALSE)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->

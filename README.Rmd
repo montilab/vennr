@@ -22,6 +22,10 @@ Install the development version of the package from Github.
 devtools::install_github("montilab/vennr")
 ```
 
+```{r eval=FALSE}
+library(vennr)
+```
+
 ## Examples
 
 ```{r fig.height = 5}
