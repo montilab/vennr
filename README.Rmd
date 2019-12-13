@@ -1,0 +1,64 @@
+---
+output:
+  github_document:
+    fig_width: 10
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r echo=FALSE, message=FALSE}
+knitr::opts_chunk$set(message=FALSE, comment="")
+devtools::load_all(".")
+```
+
+# venn.r
+Area proportional venn and euler diagrams through [venn.js](https://github.com/benfred/venn.js/)
+
+## Installation
+
+Install the development version of the package from Github.
+
+``` r
+devtools::install_github("montilab/vennr")
+```
+
+## Examples
+
+```{r fig.height = 5}
+sets <- list("Set A" = LETTERS[1:10],
+             "Set B" = LETTERS[7:15],
+             "Set C" = LETTERS[20:24])
+
+vennr(sets)
+```
+
+```{r fig.height = 5}
+sets <- list(list("sets"=list('Tigers'), "size"=12),
+             list("sets"=list('Lions'), "size"=6),
+             list("sets"=list('Bears'), "size"=20),
+             list("sets"=list('Tigers', 'Lions'), "size"=3, label="Ligers"))
+
+vennr(sets, raw=TRUE)
+```
+
+```{r, include=FALSE}
+library(hypeR)
+library(stringr)
+
+genesets <- hypeR::msigdb_download("Homo sapiens", category="H")
+names(genesets) <- gsub("HALLMARK_", "", names(genesets))
+names(genesets) <- gsub("_", " ", names(genesets))
+names(genesets) <- stringr::str_to_sentence(names(genesets))
+```
+
+```{r}
+str(head(genesets))
+```
+
+```{r fig.height = 7}
+vennr(genesets[30:35])
+```
+
+```{r fig.height = 9}
+vennr(genesets[25:35], labels=FALSE)
+```
