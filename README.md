@@ -31,10 +31,10 @@ vennr(sets)
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
 ``` r
-sets <- list(list("sets"=list('Tigers'), "size"=12),
-             list("sets"=list('Lions'), "size"=6),
-             list("sets"=list('Bears'), "size"=20),
-             list("sets"=list('Tigers', 'Lions'), "size"=3, label="Ligers"))
+sets <- list(list(sets=list('Tigers'), size=12),
+             list(sets=list('Lions'),  size=6),
+             list(sets=list('Bears'),  size=20),
+             list(sets=list('Tigers', 'Lions'), size=3, label="Ligers"))
 
 vennr(sets, raw=TRUE)
 ```
